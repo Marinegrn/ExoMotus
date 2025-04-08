@@ -7,14 +7,46 @@
   </head>
 
   <body>
-    <input type="text" id="word" />
-    <button onclick="guess()">Ok</button>
-    <p id="try"></p>
-    <p id="well"></p>
-    <p id="miss"></p>
-    <p id="not"></p>
-    <p id="win"></p>
-
+    <div class="header">
+      <h1 class="logo">
+        <span>M</span><span>O</span><span>T</span><span>U</span><span>S</span>
+      </h1>
+    </div>
+    
+    <div class="game-container">
+      <div class="word-display" id="word-display">
+        <!-- Les cases de lettres seront générées par JavaScript -->
+      </div>
+      
+      <div class="input-container">
+        <input type="text" id="word" placeholder="Entrez votre proposition..." maxlength="12" autocomplete="off">
+        <button onclick="guess()">OK</button>
+      </div>
+      
+      <div class="attempts">
+        Essai: <span id="try-count">0</span>
+      </div>
+      
+      <div class="feedback">
+        <h3>Résultats</h3>
+        <div>
+          <p>Bien placé:</p>
+          <div class="letter-group" id="well"></div>
+        </div>
+        <div>
+          <p>Mal placé:</p>
+          <div class="letter-group" id="miss"></div>
+        </div>
+        <div>
+          <p>Pas dans le mot:</p>
+          <div class="letter-group" id="not"></div>
+        </div>
+      </div>
+      
+      <div id="win" class="win-message"></div>
+      
+      <p class="hint">Indice: Le mot à deviner commence par la lettre "d"</p>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>

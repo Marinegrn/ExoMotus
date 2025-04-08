@@ -1,0 +1,207 @@
+:root {
+    --primary: #e63946;
+    --secondary: #f1faee;
+    --dark: #1d3557;
+    --correct: #2a9d8f;
+    --misplaced: #e9c46a;
+    --incorrect: #e76f51;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark);
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .logo {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+  }
+  
+  .logo span {
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .game-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-container {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  
+  input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--secondary);
+    color: var(--dark);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #c1121f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .word-display {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .letter-box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 5px;
+    border-radius: 8px;
+    background-color: #2b2d42;
+    color: white;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  .letter-correct {
+    background-color: var(--correct);
+    animation: flip 0.5s ease;
+  }
+  
+  .letter-misplaced {
+    background-color: var(--misplaced);
+    animation: flip 0.5s ease;
+  }
+  
+  .letter-incorrect {
+    background-color: var(--incorrect);
+    animation: flip 0.5s ease;
+  }
+  
+  @keyframes flip {
+    0% { transform: rotateX(0); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0); }
+  }
+  
+  .feedback {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+  }
+  
+  .feedback h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+  
+  .letter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .letter-chip {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  
+  .well-placed {
+    background-color: var(--correct);
+    color: white;
+  }
+  
+  .misplaced {
+    background-color: var(--misplaced);
+    color: var(--dark);
+  }
+  
+  .not-in-word {
+    background-color: var(--incorrect);
+    color: white;
+  }
+  
+  .win-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    animation: celebrate 1s ease infinite;
+  }
+  
+  @keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .attempts {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .hint {
+    font-style: italic;
+    color: #aaa;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .first-letter {
+    background-color: var(--correct) !important;
+  }
