@@ -63,7 +63,6 @@ function tryWord(word, base) {
 
 function guess() {
   if (gameOver) return;
-  
   let word = document.getElementById("word").value.trim();
   
   // Validation de base
@@ -71,7 +70,6 @@ function guess() {
     alert("Veuillez entrer un mot !");
     return;
   }
-  
   if (word.length !== baseWord.length) {
     alert(`Le mot doit contenir ${baseWord.length} lettres !`);
     return;
@@ -95,7 +93,7 @@ function guess() {
     gameOver = true;
     confetti();
   }
-}
+};
 
 function updateWordDisplay(word, result) {
   const wordDisplay = document.getElementById("word-display");
@@ -136,7 +134,7 @@ function updateWordDisplay(word, result) {
       box.classList.add("letter-incorrect");
     });
   }
-}
+};
 
 function updateResults(result) {
   if (result === true) {
@@ -144,7 +142,7 @@ function updateResults(result) {
     document.getElementById("miss").innerHTML = '';
     document.getElementById("not").innerHTML = '';
     return;
-  }
+  };
   
   // Bien placé
   const wellContainer = document.getElementById("well");
@@ -175,7 +173,7 @@ function updateResults(result) {
     chip.textContent = item.letter;
     notContainer.appendChild(chip);
   });
-}
+};
 
 // Des pitis confettis !
 function confetti() {
@@ -209,7 +207,7 @@ function confetti() {
       confetti.remove();
     };
   }
-}
+};
 
 // Gestion des événements sur la touche entrée
 document.getElementById("word").addEventListener("keypress", function(event) {
