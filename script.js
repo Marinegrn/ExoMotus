@@ -29,7 +29,7 @@ function tryWord(word, base) {
     
     return { wellPlaced: wellPlaced, missplaced: missplaced, notInWord: notInWord }
   }
-}
+};
 
 function guess() {
     let base = 'dictionnaire';
