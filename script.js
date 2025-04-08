@@ -91,10 +91,7 @@ function guess() {
   
   // Vérifier si le joueur a gagné
   if (result === true || (result.wellPlaced && result.wellPlaced.length === baseWord.length)) {
-    document.getElementById("win").innerHTML = `
-      <div>🎉 Félicitations! 🎉</div>
-      <div>Vous avez trouvé en ${attempts} essai${attempts > 1 ? 's' : ''}!</div>
-    `;
+    document.getElementById("win").innerHTML = `<div>🎉 Bien joué ! 🎉</div>`;
     gameOver = true;
     confetti();
   }
