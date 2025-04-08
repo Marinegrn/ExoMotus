@@ -40,6 +40,7 @@ function guess() {
     document.getElementById("well").innerText = 'Bien placé: ' + (result.wellPlaced ? result.wellPlaced.join(', ') : '');
     document.getElementById("miss").innerText = 'Mal placé: ' + (result.missplaced ? result.missplaced.join(', ') : '');
     document.getElementById("not").innerText = 'Pas dans le mot: ' + (result.notInWord ? result.notInWord.join(', ') : '');
+    //TODO: débagogage, message de victoire
     if (result.wellPlaced && result.wellPlaced.length === base.length) {
         document.getElementById("win").innerText = 'Vous avez gagné';
     } else {
