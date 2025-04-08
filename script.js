@@ -48,7 +48,6 @@ function tryWord(word, base) {
         missplaced.push({ letter: arrayWord[i], position: i });
       }
     }
-    
     // Vérifie les lettres qui ne sont pas dans le mot
     for (let i = 0; i < arrayWord.length; i++) {
       const char = arrayWord[i];
@@ -56,10 +55,9 @@ function tryWord(word, base) {
         notInWord.push({ letter: char, position: i });
       }
     }
-    
     return { wellPlaced: wellPlaced, missplaced: missplaced, notInWord: notInWord };
   }
-}
+};
 
 function guess() {
   if (gameOver) return;
@@ -74,7 +72,6 @@ function guess() {
     alert(`Le mot doit contenir ${baseWord.length} lettres !`);
     return;
   }
-  
   attempts++;
   document.getElementById("try-count").innerText = attempts;
   
@@ -215,6 +212,5 @@ document.getElementById("word").addEventListener("keypress", function(event) {
     guess();
   }
 });
-
 // Initialiser le jeu au chargement
 window.onload = initGame;
